@@ -7,14 +7,14 @@ body {
                 sans-serif;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views 
+/* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
-*/
+
 
 /* Custom page header */
 .header {
@@ -33,6 +33,15 @@ body {
                 sans-serif; 
 }
 
+#headline {
+  
+  background-color: #f2f2f2;
+}
+#headline h2 {
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
 
 /* Custom page footer */
 .footer {
