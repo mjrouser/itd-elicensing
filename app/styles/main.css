@@ -68,6 +68,7 @@ body {
 #image-group {
   position: relative;
   height: 500px;
+  border-bottom: 5px solid #FFFFFF;
 
 }
 
@@ -75,8 +76,6 @@ body {
 #head-img {
   
   z-index: -1;
-  width: 1000px;
-  height: 500px;
   position: absolute;
 }
 
@@ -101,17 +100,30 @@ body {
   text-shadow: 1px 1px #000000;
 }
 
+/*Styling for the "Get Started Now" button */
+
+#get-started {
+  position: relative;
+  height: 5px;
+  background-color: #dda037;
+  border-bottom: 5px solid #FFFFFF;
+  border-top: 5px solid #FFFFFF;
+
+}
+
+
 /*Styling for the search and browse sections of the page*/
 #body-wrapper {
   position: relative;
   margin: 0px;
-
+  border-top: 5px solid #FFFFFF;
 }
 
 #body-wrapper #headline {
   
   background-color: #f2f2f2;
   margin: 0;
+  
 }
 
 #body-wrapper #headline h2 {
