@@ -68,7 +68,6 @@ body {
 #image-group {
   position: relative;
   height: 500px;
-  border-bottom: 5px solid #FFFFFF;
 
 }
 
@@ -104,7 +103,7 @@ body {
 
 #get-started {
   position: relative;
-  height: 5px;
+  height: 15px;
   background-color: #dda037;
   border-bottom: 5px solid #FFFFFF;
   border-top: 5px solid #FFFFFF;
@@ -116,7 +115,6 @@ body {
 #body-wrapper {
   position: relative;
   margin: 0px;
-  border-top: 5px solid #FFFFFF;
 }
 
 #body-wrapper #headline {
@@ -140,7 +138,7 @@ body {
 /* Main marketing message and sign up button */
 #body-wrapper .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #FFFFFF;
   
 }
 #body-wrapper .jumbotron .btn {
