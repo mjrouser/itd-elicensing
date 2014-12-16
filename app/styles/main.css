@@ -67,36 +67,38 @@ body {
 /* styling for the masthead images and text*/
 #image-group {
   position: relative;
-  height: 500px;
+  padding-bottom: 9%;
 
 }
 
 
 #head-img {
   
-  z-index: -1;
+  z-index: 0;
   position: absolute;
 }
 
 
  #seal-img {
 
-   margin: 0;
+   margin: 0 auto;
    z-index: 1;
    width: 180px;
    height: 180px;
-   padding-top: 70px;
-   padding-left: 410px;
-   position: absolute;
+   padding-top: 8%;
+   position: relative;
+
 }
 
 #head-text {
-  position: absolute;
-  padding-top: 280px;
+  
+  padding-top: 10%;
   text-align: center;
   width: 100%;
   color: #FFFFFF;
   text-shadow: 1px 1px #000000;
+  position: relative;
+  z-index: 1;
 }
 
 /*Styling for the "Get Started Now" button */
@@ -108,6 +110,26 @@ body {
   border-bottom: 5px solid #FFFFFF;
   border-top: 5px solid #FFFFFF;
 
+}
+
+#get-started #element {
+  
+  height: 60px;
+  width: 220px;
+  background-color: #dda037;
+  z-index: 2;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+  border: 5px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+#get-started #element h1 {
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 3px;
 }
 
 
