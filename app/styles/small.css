@@ -7,6 +7,10 @@ body {
                 sans-serif;
 }
 
+.container {
+  margin: 0 auto;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -20,13 +24,15 @@ body {
 .header {
   
   background-color: #404040;
-  border-bottom: 5px solid #f2f2f2;
+  border: 0;
   
 
 }
 .header p{
   color: #f2f2f2;
-  margin-left: 100px;
+  margin: 0 auto;
+  text-align: center;
+  border: 0;
 
 }
 
@@ -43,26 +49,13 @@ body {
 }
 .footer p {
 
-  margin-left: 100px;
+  margin: 0 auto;
   color: #f2f2f2;
+  text-align: center;
 
 
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 1000px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-/*
-.container-narrow > hr {
-  margin: 30px 0;
-}
-*/
 
 /* styling for the masthead images and text*/
 .image-group {
@@ -79,14 +72,9 @@ body {
 }
 
 
- .seal-img {
+.seal-img {
 
-   margin: 0 auto;
-   z-index: 1;
-   width: 180px;
-   height: 180px;
-   padding-top: 8%;
-   position: relative;
+  display: none;
 
 }
 
@@ -102,7 +90,11 @@ body {
 }
 
 .head-text p{
-  font-size: 36px;
+  font-size: 26px;
+}
+
+.head-text h2 {
+  display: none;
 }
 /*Styling for the "Get Started Now" button */
 
@@ -117,8 +109,8 @@ body {
 
 .get-started .element {
   
-  height: 60px;
-  width: 260px;
+  height: 50px;
+  width: 170px;
   background-color: #dda037;
   z-index: 2;
   position: relative;
@@ -132,7 +124,8 @@ body {
 .get-started .element p {
   color: #FFFFFF;
   text-align: center;
-  font-size: 36px;
+  font-size: 26px;
+  margin:0 ;
 }
 
 
@@ -144,18 +137,7 @@ body {
 
 .body-wrapper .headline {
   
-  background-color: #f2f2f2;
-  margin: 0;
-  
-}
-
-.body-wrapper .headline h2 {
-  text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin: 0px;
+  display: none;
 }
 
 
@@ -202,21 +184,3 @@ body {
 }
 
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 0px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
