@@ -182,23 +182,20 @@ body {
 }
 
 .show-me {
-  width: 269px;
-  height: 40px;
+  width: 20em;
   margin: 0 auto;
 
 }
 
 .show-me .press-me {
-  font-size: 24px;
+  font-size: 1.7em;
   color: #FFFFFF;
   background: #dda037;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: 40px;
   text-align: center;
-  padding-top: 1%;
 }
 
 

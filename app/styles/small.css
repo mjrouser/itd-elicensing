@@ -9,6 +9,7 @@ body {
 
 .container {
   margin: 0 auto;
+  padding: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -86,11 +87,11 @@ body {
   color: #FFFFFF;
   text-shadow: 1px 1px #000000;
   position: relative;
-  z-index: 1;
+
 }
 
 .head-text p{
-  font-size: 26px;
+  font-size: 1.7em;
 }
 
 .head-text h2 {
@@ -124,7 +125,7 @@ body {
 .get-started .element p {
   color: #FFFFFF;
   text-align: center;
-  font-size: 26px;
+  font-size: 1.7em;
   margin:0 ;
 }
 
@@ -132,12 +133,10 @@ body {
 /*Styling for the search and browse sections of the page*/
 .body-wrapper {
   position: relative;
-  margin: 0px;
 }
 
 .body-wrapper .headline {
-  
-  display: none;
+   display: none;
 }
 
 
@@ -164,23 +163,30 @@ body {
 }
 
 .show-me {
-  width: 269px;
-  height: 40px;
   margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+@media (max-width:20em){
+
+.show-me{
+  margin:0 auto;
+  padding: 0;
+}
+
 
 }
 
 .show-me .press-me {
-  font-size: 24px;
+  font-size: 1.46em;
   color: #FFFFFF;
   background: #dda037;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: 40px;
   text-align: center;
-  padding-top: 1%;
+
 }
 
 
