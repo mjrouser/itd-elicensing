@@ -156,7 +156,7 @@ body {
 .body-wrapper .marketing {
   padding-top: 40px;
   margin: 0px;
-  
+  border-bottom: 1px solid #e5e5e5;
 }
 .body-wrapper .marketing p + h4 {
   margin-top: 28px;
