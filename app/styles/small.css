@@ -45,7 +45,7 @@ body {
   
   background-color: #404040;
   padding-top: 19px;
-  border-top: 1px solid #e5e5e5;
+
   
 }
 .footer p {
@@ -157,9 +157,20 @@ body {
   padding-top: 40px;
   margin: 0px;
   border-bottom: 1px solid #e5e5e5;
+  
 }
-.body-wrapper .marketing p + h4 {
+.body-wrapper .marketing .caption   {
   margin-top: 28px;
+  text-align: center;
+  font-size: 1.7em;
+  color:#dda037;
+}
+
+.body-wrapper .marketing .body-text   {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 0;
 }
 
 .show-me {
