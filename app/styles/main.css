@@ -1,0 +1,221 @@
+/* Customize container */
+
+.container {
+    max-width: 1000px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+body {
+
+  font-family: "ff-good-headline-web-pro-con", 
+                "Arial Narrow", 
+                Arial, 
+                sans-serif;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+
+/* Custom page header */
+.header {
+  
+  background-color: #404040;
+  border-bottom: 5px solid #f2f2f2;
+  
+
+}
+.header p{
+  color: #f2f2f2;
+  margin-left: 100px;
+
+}
+
+
+
+
+/* Custom page footer */
+.footer {
+  
+  background-color: #404040;
+  padding-top: 1.3em;
+
+  
+}
+.footer p {
+
+  margin-left: 100px;
+  margin-bottom: 0;
+  color: #f2f2f2;
+
+
+}
+
+
+
+
+
+/* styling for the masthead images and text*/
+.image-group {
+  position: relative;
+  padding-bottom: 5%;
+
+}
+
+
+.head-img {
+  
+  z-index: 0;
+  position: absolute;
+}
+
+
+ .seal-img {
+
+   margin: 0 auto;
+   z-index: 1;
+   width: 180px;
+   height: 180px;
+   padding-top: 8%;
+   position: relative;
+
+}
+
+.head-text {
+  
+  padding-top: 10%;
+  text-align: center;
+  width: 100%;
+  color: #FFFFFF;
+  text-shadow: 1px 1px #000000;
+  position: relative;
+  z-index: 1;
+}
+
+.head-text p{
+  font-size: 36px;
+}
+/*Styling for the "Get Started Now" button */
+
+.get-started {
+  position: relative;
+  height: 15px;
+  background-color: #dda037;
+  border-bottom: 5px solid #FFFFFF;
+  border-top: 5px solid #FFFFFF;
+
+}
+
+.get-started .element {
+  
+  height: 60px;
+  width: 260px;
+  background-color: #dda037;
+  z-index: 2;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2em;
+  border: 5px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.get-started .element p {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 2.6em;
+  margin-top: -0.1em;
+}
+
+
+/*Styling for the search and browse sections of the page*/
+.body-wrapper {
+  position: relative;
+  margin: 0px;
+}
+
+.body-wrapper .headline {
+  
+  background-color: #f2f2f2;
+  margin: 0;
+  
+}
+
+.body-wrapper .headline h2 {
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0px;
+}
+
+
+
+/* Main marketing message and sign up button */
+.body-wrapper .jumbotron {
+  text-align: center;
+  background-color: #FFFFFF;
+  
+}
+.body-wrapper .jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.body-wrapper .marketing {
+  padding-top: 40px;
+  margin: 0px;
+  border-bottom: 1px solid #e5e5e5;
+  
+}
+.body-wrapper .marketing .caption   {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 2.6em;
+  color:#dda037;
+}
+
+.body-wrapper .marketing .body-text   {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 1.4em;
+  margin-top: 0;
+}
+
+
+.show-me {
+  width: 20em;
+  margin: 0 auto;
+
+}
+
+.show-me .press-me {
+  font-size: 1.7em;
+  color: #FFFFFF;
+  background: #dda037;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  text-align: center;
+}
+
+
+@media  (max-width:48em){
+  .body-wrapper .headline h2 {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .seal-img{
+    display: none;
+  }
+}
