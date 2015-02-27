@@ -1,51 +1,17 @@
-<div class="image-group"  >
-  
-
-  
-
-  <div class="head-img">
-    <img class="img-responsive"  src="http://placehold.it/1000x500/dda037.png&text=..." alt="Head Image" role="img"></div>
-  <div class="seal-img">
-    <img class="img-repsonsive"  src="../images/commonwealth_seal_white.png" alt="State Seal" role="img">
-  </div>
- 
-
-  <div class="head-text">
-    <p>
-      eLicensing & Permitting Portal
-    </p>
-    <h2>
-      You work hard for your business. Let us make it easier for you.
-    </h2>
-  </div>
-
-
-
-</div>
-
-<div class="get-started">
-
-    <div class="element">
-      <p>Get Started Now</p>
-    </div>  
-
-</div>
 
 
 
 <div  class="body-wrapper">
   
-  <div  class="headline">
-    <h2>We've made it way easier to search for licenses and permits to get your business up and running faster and easier than ever before. Get started below by searching for specific licenses or browsing popular ones.</h2>
-  </div>
+
  
-  <div class="row marketing">
-  <div class="customHTML">
+  <div class="row marketing" >
+    <div class="customHTML">
     <!--.CustomHTML -->
     <div style="padding: 0 0 0.5em 0; border: 1px solid #e0e0e0; border-radius: 3px;">
       <h2 style="min-height: 30px; box-shadow: 0px 0px 6px rgb(222, 222, 222) inset; border-bottom: 1px solid rgb(229, 229, 229); background: #efefef url('http://www.mass.gov/resources/images/template/icon_w_license.png') 0.5em 0.3em no-repeat; margin-bottom: 0.3em; padding: 0.3em 0.5em 0.3em 33px;  margin-top: 0px;">Professional License Information</h2>
         <p style="margin: 0.7em 1em 0 1em; font-size: 90%; list-style: none; color: #555;">Search by license type to find out where to apply for, renew, or verify a license, or to file a complaint against a license holder. (Ex. Nursing)</p>
-          <form  method="GET" action="#/about" style="margin: 0.7em;">
+          <form  method="GET" action="#/results" style="margin: 0.7em;">
             
             <input type="hidden" name="client" value="custom_license">
             <input type="hidden" name="proxystylesheet" value="custom_license">
@@ -62,7 +28,7 @@
             <input type="hidden" name="output" value="xml_no_dtd">
             
             
-            <input type="text" name="q" id="q"  style="position: relative;">
+            <input type="text" name="q" id="q"  style="position: relative;" ng-model="query">
             <label for="q">Enter license type:</label>
 
             
@@ -73,7 +39,10 @@
     </div>
   </div>
   <!-- .CustomHTML --> 
+ 
+
   </div>
+
 
   <div class="row marketing">
     <p class="caption">Browse popular licenses</p>
