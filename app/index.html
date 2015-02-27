@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>MA eLicensing Portal</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -12,34 +12,70 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" media="(min-width:29.7em)" href="styles/main.css">
     <!-- endbuild -->
+    <!-- build:css(.tmp) styles/small.css -->
+    <link rel="stylesheet" media="(max-width:29.6em)" href="styles/small.css">
+    <!-- endbuild -->
+    <script src="//use.typekit.net/fci1nnn.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
   </head>
-  <body ng-app="portalApp">
+  <body role="document" ng-app="portalApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+    <noscript>This website requires JavaScript to function.  Please enable JavaScript or upgrade your browser.</noscript>
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">portal</h3>
+        <p>Massachusetts eLicensing & Permitting Portal</p>
       </div>
+      <div class="image-group"  >
+  
+
+  
+
+  <div class="head-img">
+    <img class="img-responsive"  src="http://placehold.it/1000x500/dda037.png&text=..." alt="Head Image" role="img"></div>
+  <div class="seal-img">
+    <img class="img-repsonsive"  src="../images/commonwealth_seal_white.png" alt="State Seal" role="img">
+  </div>
+ 
+
+  <div class="head-text">
+    <p>
+      eLicensing & Permitting Portal
+    </p>
+    <h2>
+      You work hard for your business. Let us make it easier for you.
+    </h2>
+  </div>
+
+
+
+  </div>
+
+  <div class="get-started">
+
+      <div class="element">
+        <p>Get Started Now</p>
+      </div>  
+
+  </div>
+  <div  class="headline">
+    <h2>We've made it way easier to search for licenses and permits to get your business up and running faster and easier than ever before. Get started below by searching for specific licenses or browsing popular ones.</h2>
+  </div>
 
       <div ng-view=""></div>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-copyright-mark"></span> 2014 Commonwealth of Massachussetts.<br>
+        Mass.Gov <span class="glyphicon glyphicon-registration-mark"></span> is a registered service mark of the Commonwealth of Massachusetts</p>
       </div>
     </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
      <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -49,6 +85,7 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
+    -->
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -75,7 +112,9 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/results.js"></script>
         <script src="scripts/controllers/about.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

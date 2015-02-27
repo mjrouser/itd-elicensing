@@ -1,11 +1,3 @@
-/* Customize container */
-
-.container {
-    max-width: 1000px;
-    padding-left: 0;
-    padding-right: 0;
-}
-
 
 body {
 
@@ -15,12 +7,17 @@ body {
                 sans-serif;
 }
 
+.container {
+  margin: 0 auto;
+  padding: 0;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 
@@ -28,13 +25,15 @@ body {
 .header {
   
   background-color: #404040;
-  border-bottom: 5px solid #f2f2f2;
+  border: 0;
   
 
 }
 .header p{
   color: #f2f2f2;
-  margin-left: 100px;
+  margin: 0 auto;
+  text-align: center;
+  border: 0;
 
 }
 
@@ -45,27 +44,24 @@ body {
 .footer {
   
   background-color: #404040;
-  padding-top: 1.3em;
+  padding-top: 19px;
 
   
 }
 .footer p {
 
-  margin-left: 100px;
-  margin-bottom: 0;
+  margin: 0 auto;
   color: #f2f2f2;
+  text-align: center;
 
 
 }
 
 
-
-
-
 /* styling for the masthead images and text*/
 .image-group {
-
-  height: 500px;
+  position: relative;
+  padding-bottom: 9%;
 
 }
 
@@ -77,14 +73,9 @@ body {
 }
 
 
- .seal-img {
+.seal-img {
 
-   margin: 0 auto;
-   z-index: 1;
-   width: 180px;
-   height: 180px;
-   padding-top: 8%;
-   position: relative;
+  display: none;
 
 }
 
@@ -96,13 +87,17 @@ body {
   color: #FFFFFF;
   text-shadow: 1px 1px #000000;
   position: relative;
-  z-index: 1;
+
 }
 
 .head-text p{
-  font-size: 36px;
+  font-size: 1.7em;
 }
-/*Styling for the "Get Started Now" element */
+
+.head-text h2 {
+  display: none;
+}
+/*Styling for the "Get Started Now" button */
 
 .get-started {
   position: relative;
@@ -115,8 +110,8 @@ body {
 
 .get-started .element {
   
-  height: 60px;
-  width: 260px;
+  height: 50px;
+  width: 170px;
   background-color: #dda037;
   z-index: 2;
   position: relative;
@@ -130,33 +125,20 @@ body {
 .get-started .element p {
   color: #FFFFFF;
   text-align: center;
-  font-size: 2.6em;
-  margin-top: -0.1em;
-}
-/* Styleing for page headline */
-.headline {
-  
-  background-color: #f2f2f2;
-  margin: 0;
-  z-index: 2;
-  
-}
-
-.headline h2 {
-  text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin: 0px;
+  font-size: 1.7em;
+  margin:0 ;
 }
 
 
 /*Styling for the search and browse sections of the page*/
 .body-wrapper {
   position: relative;
-  margin: 0px;
 }
+
+.body-wrapper .headline {
+   display: none;
+}
+
 
 
 /* Main marketing message and sign up button */
@@ -180,26 +162,34 @@ body {
 .body-wrapper .marketing .caption   {
   margin-top: 28px;
   text-align: center;
-  font-size: 2.6em;
+  font-size: 1.7em;
   color:#dda037;
 }
 
 .body-wrapper .marketing .body-text   {
   margin-top: 28px;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-top: 0;
 }
 
-
 .show-me {
-  width: 20em;
   margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+@media (max-width:20em){
+
+.show-me{
+  margin:0 auto;
+  padding: 0;
+}
+
 
 }
 
 .show-me .press-me {
-  font-size: 1.7em;
+  font-size: 1.46em;
   color: #FFFFFF;
   background: #dda037;
   border-top-left-radius: 10px;
@@ -207,15 +197,7 @@ body {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   text-align: center;
+
 }
 
 
-@media  (max-width:48em){
-  .body-wrapper .headline h2 {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-  .seal-img{
-    display: none;
-  }
-}
