@@ -9,9 +9,8 @@
  */
 angular.module('portalApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.query = [];
+    $scope.submit = function (){
+    	console.log('user clicked submit with ',$scope.query);
+    };
   });
