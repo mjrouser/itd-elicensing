@@ -1,7 +1,7 @@
 
 
 
-<div class="body-wrapper" ng-controller="MainCtrl as ctrl">
+<div class="body-wrapper" ng-controller="MainCtrl as main">
   
 
  
@@ -11,9 +11,11 @@
     <div style="padding: 0 0 0.5em 0; border: 1px solid #e0e0e0; border-radius: 3px;">
       <h2 style="min-height: 30px; box-shadow: 0px 0px 6px rgb(222, 222, 222) inset; border-bottom: 1px solid rgb(229, 229, 229); background: #efefef url('http://www.mass.gov/resources/images/template/icon_w_license.png') 0.5em 0.3em no-repeat; margin-bottom: 0.3em; padding: 0.3em 0.5em 0.3em 33px;  margin-top: 0px;">Professional License Information</h2>
         <p style="margin: 0.7em 1em 0 1em; font-size: 90%; list-style: none; color: #555;">Search by license type to find out where to apply for, renew, or verify a license, or to file a complaint against a license holder. (Ex. Nursing)</p>
-          <form  method="GET" action="#/results" style="margin: 0.7em;">
+          <form  method="GET" action="#/results" style="margin: 0.7em;" ng-submit="main.getResults()">
+            
             
             <input type="hidden" name="client" value="custom_license">
+            <!--
             <input type="hidden" name="proxystylesheet" value="custom_license">
             
             <input type="hidden" name="site" value="PORTALxLICENSE">
@@ -26,18 +28,27 @@
             <input type="hidden" name="filter" value="0">
             
             <input type="hidden" name="output" value="xml_no_dtd">
+            -->
             
-            
-            <input type="text" name="q" id="q"  style="position: relative;" ng-model="ctrl.query">
+            <input type="text" name="q" id="q"  style="position: relative;" ng-model="main.form.widget.query">
             <label for="q">Enter license type:</label>
-            <input type="submit" style="margin-top:5px; margin-left: 0.5em;" name="Search" value="Search" ng-click="ctrl.submit()" >
+            <input type="submit" style="margin-top:5px; margin-left: 0.5em;" name="Search" value="Search">
           </form>
     </div>
   </div>
   <!-- .CustomHTML --> 
- 
+  <h3>{{main.form.widget.query}}</h3>
+
+  <ul>
+    <li ng-repeat="results in results">
+      <p>{{results}}</p>
+    </li>
+  </ul>
+
+  
 
   </div>
+
 
 
   <div class="row marketing">

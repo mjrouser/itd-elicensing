@@ -1,15 +1,45 @@
 
 
 
-<div  class="body-wrapper">
+<div  class="body-wrapper" ng-controller="MainCtrl as main">
   
  
   <div class="row marketing" >
 	<div class="customHTML">
   	<!-- .CustomHTML -->
-		<iframe title="Search results" id="iFrame" name="iFrame" TARGET="ResultFrame" frameborder="0" width="100%" scrolling="no" OnLoad="window.scroll(0, 0);" src="http://146.243.30.38/search?{{ctrl.query}}> </iframe>	
+		<iframe 
+			title="Search results" 
+			id="iFrame" 
+			name="iFrame" 
+			TARGET="ResultFrame" 
+			frameborder="0" 
+			width="100%" 
+			scrolling="no" 
+			OnLoad="window.scroll(0, 0);" 
+			src= ""
+		> 
+		{{main.widget.query}}
+		</iframe>	
+		<p>{{main.widget.query}}</p>
 	</div>
    </div>
+
+<!--
+   <script> 
+   		$.ajax({
+                  url: "http://146.243.30.38/search?client=custom_license&proxystylesheet=custom_license&site=PORTALxLICENSE&startsite=PORTALxLICENSE&getfields=*&ie=UTF-8&oe=UTF-8&tlen=215&sitefolder=portal&filter=0&output=xml_no_dtd&q=barber&Search=Search",
+                  cache: false
+               })
+               .done(function( html ) {
+               $( "#iFrame" ).append( html );
+               });
+   </script>
+-->
+                    <!--
+			"http://146.243.30.38/search?client=custom_license&proxystylesheet=custom_license&site=PORTALxLICENSE&startsite=PORTALxLICENSE&getfields=*&ie=UTF-8&oe=UTF-8&tlen=215&sitefolder=portal&filter=0&output=xml_no_dtd&q=barber&Search=Search"
+			-->
+
+
 
 
   <div class="row marketing">
