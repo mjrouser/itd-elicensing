@@ -7,6 +7,8 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
@@ -71,9 +73,23 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      
+    proxies: [
+       {
+        context: '/',
+        host:  '146.243.30.38/search',
+        port: 8000,
+        changeOrigin: true,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'host' : 'license.mass.gov'
+              }
+        }],
+
       livereload: {
         options: {
           open: true,
+          
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -81,10 +97,36 @@ module.exports = function (grunt) {
                 '/bower_components',
                 connect.static('./bower_components')
               ),
-              connect.static(appConfig.app)
+              connect.static(appConfig.app),
+              proxySnippet
             ];
           }
         }
+
+          /*
+          base: [
+            '.tmp',
+            '<%= yeoman.app %>'
+         ],
+           middleware: function (connect, options) {
+             var middlewares = [];
+           
+             if (!Array.isArray(options.base)) {
+             options.base = [options.base];
+             }
+           
+             // Setup the proxy
+             middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
+ 
+             // Serve static files
+             options.base.forEach(function(base) {
+             middlewares.push(connect.static(base));
+            });
+ 
+            return middlewares;
+          }
+        }
+        */
       },
       test: {
         options: {
@@ -354,6 +396,7 @@ module.exports = function (grunt) {
     }
   });
 
+  //grunt.loadNpmTasks('grunt-connect-proxy');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -363,6 +406,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
+      'configureProxies: serve',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',

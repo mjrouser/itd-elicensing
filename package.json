@@ -1,11 +1,17 @@
 {
+  "repository" : {
+    "type" : "git",
+    "version" : "0.3.1",
+    "private" : "true",
+    "url" : "https://github.com/massgov/itd-elicensing"
+  },
   "name": "portal",
-  "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
     "grunt-concurrent": "^0.5.0",
+    "grunt-connect-proxy": "^0.1.11",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-connect": "^0.7.1",
