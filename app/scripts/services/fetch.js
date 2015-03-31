@@ -9,12 +9,36 @@
  */
 
 
+
+
+
+
+
 angular.module('portalApp')
   .factory('Fetch', function ($resource) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    return $resource( 'http://146.243.30.38/search?/client=custom_license&proxystylesheet=custom_license&getfields=*&ie=UTF-8&oe=UTF-8&tlen=215&sitefolder=portal&filter=0&site=PORTALxLICENSE&startsite=PORTALxLICENSE&Search=Search&:q');
+    return $resource( 'http://146.243.30.38/search?callback=JSON_CALLBACK&client=custom_license&proxystylesheet=custom_license&getfields=*&ie=UTF-8&oe=UTF-8&tlen=215&sitefolder=portal&filter=0&site=PORTALxLICENSE&startsite=PORTALxLICENSE&Search=Search&q=', {}, {
+        jsonpquery: {
+            method: 'JSONP', 
+            headers: {
+                'Accept': 'application/json, application/javascript, text/html',
+                'Content-Type': 'application/json'
+            } 
+            //isArray: true 
+        }
+
+    });
   });
-//*/
+
+
+/*
+angular.module('portalApp')
+  .factory('Fetch', function ($resource) {
+    // AngularJS will instantiate a singleton by calling "new" on this function
+    return $resource( 'http://146.243.30.38/search?client=custom_license&proxystylesheet=custom_license&getfields=*&ie=UTF-8&oe=UTF-8&tlen=215&sitefolder=portal&filter=0&site=PORTALxLICENSE&startsite=PORTALxLICENSE&Search=Search&:q');
+  });
+
+*/
 
  /*
 angular.module('portalApp')

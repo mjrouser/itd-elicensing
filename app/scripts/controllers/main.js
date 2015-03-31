@@ -7,8 +7,25 @@
  * # MainCtrl
  * Controller of the portalApp
  */
+
+ 
 angular.module('portalApp')
   .controller('MainCtrl', function ($scope, Fetch) {
+
+
+       $scope.entries = Fetch.jsonpquery();
+       console.log();
+
+
+
+/*
+  	var entry = Fetch.get({ q: 'q=nurse' }, function(data) {
+  		$scope.entry = data;
+  		
+  	});
+  	console.log(entry);
+*/
+
 /*  	
   	$scope.results = [];
 
@@ -46,12 +63,6 @@ angular.module('portalApp')
   	return( console.log($scope.results));
 });
 */
-
-  	var entry = Fetch.get({ q: 'q=nurse' }, function(data) {
-  		$scope.entry = data;
-  		
-  	});
-  	console.log(entry);
 
 
   
