@@ -99,7 +99,7 @@ body {
   z-index: 1;
 }
 
-.head-text p{
+.head-text h1{
   font-size: 36px;
 }
 /*Styling for the "Get Started Now" element */
@@ -127,11 +127,11 @@ body {
   border-radius: 10px;
 }
 
-.get-started .element p {
+.get-started .element h1 {
   color: #FFFFFF;
   text-align: center;
   font-size: 2.6em;
-  margin-top: -0.1em;
+  margin-top: 0.1em;
 }
 /* Styleing for page headline */
 .headline {

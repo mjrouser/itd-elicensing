@@ -8,13 +8,18 @@
  * Controller of the portalApp
  */
 
- 
+
 angular.module('portalApp')
   .controller('MainCtrl', function ($scope, Fetch) {
 
 
-       $scope.entries = Fetch.jsonpquery();
-       console.log();
+       
+          Fetch.jsonpquery(function(data){
+          	$scope.queries = data;
+              console.log();
+
+          });
+       
 
 
 
