@@ -79,7 +79,7 @@ module.exports = function (grunt) {
        {
         context: '/',
         host:  '146.243.30.38/search',
-        port: 8000,
+        port: 80,
         changeOrigin: true,
         headers: {
           'Access-Control-Allow-Origin': '*',
