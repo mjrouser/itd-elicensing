@@ -3,7 +3,7 @@
 describe('Controller: AboutCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('portalApp'));
+  beforeEach(module('itdElicensingApp'));
 
   var AboutCtrl,
     scope;

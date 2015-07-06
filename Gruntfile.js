@@ -1,4 +1,4 @@
-// Generated on 2014-12-08 using generator-angular 0.10.0
+// Generated on 2015-06-15 using generator-angular 0.11.1
 'use strict';
 
 // # Globbing
@@ -6,8 +6,6 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
-
-//var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
 module.exports = function (grunt) {
 
@@ -39,7 +37,8 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          livereload: '<%= connect.options.livereload %>'
+          livereload: '<%= connect.options.livereload %>', 
+          spawn: false,
         }
       },
       jsTest: {
@@ -73,24 +72,9 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
-      
-/*
-    proxies: [
-       {
-        context: '/',
-        host:  '146.243.30.38/search',
-        port: 80,
-        changeOrigin: true,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'host' : 'license.mass.gov'
-              }
-        }],
-*/      
       livereload: {
         options: {
           open: true,
-          
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -98,36 +82,14 @@ module.exports = function (grunt) {
                 '/bower_components',
                 connect.static('./bower_components')
               ),
-              connect.static(appConfig.app),
-              //proxySnippet
+              connect().use(
+                '/app/styles',
+                connect.static('./app/styles')
+              ),
+              connect.static(appConfig.app)
             ];
           }
         }
-
-          /*
-          base: [
-            '.tmp',
-            '<%= yeoman.app %>'
-         ],
-           middleware: function (connect, options) {
-             var middlewares = [];
-           
-             if (!Array.isArray(options.base)) {
-             options.base = [options.base];
-             }
-           
-             // Setup the proxy
-             middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
- 
-             // Serve static files
-             options.base.forEach(function(base) {
-             middlewares.push(connect.static(base));
-            });
- 
-            return middlewares;
-          }
-        }
-        */
       },
       test: {
         options: {
@@ -193,6 +155,17 @@ module.exports = function (grunt) {
       options: {
         browsers: ['last 1 version']
       },
+      server: {
+        options: {
+          map: true,
+        },
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles/',
+          src: '{,*/}*.css',
+          dest: '.tmp/styles/'
+        }]
+      },
       dist: {
         files: [{
           expand: true,
@@ -208,6 +181,22 @@ module.exports = function (grunt) {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
         ignorePath:  /\.\.\//
+      },
+      test: {
+        devDependencies: true,
+        src: '<%= karma.unit.configFile %>',
+        ignorePath:  /\.\.\//,
+        fileTypes:{
+          js: {
+            block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
+              detect: {
+                js: /'(.*\.js)'/gi
+              },
+              replace: {
+                js: '\'{{filePath}}\','
+              }
+            }
+          }
       }
     },
 
@@ -247,7 +236,11 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
+        assetsDirs: [
+          '<%= yeoman.dist %>',
+          '<%= yeoman.dist %>/images',
+          '<%= yeoman.dist %>/styles'
+        ]
       }
     },
 
@@ -324,7 +317,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
+          src: '*.js',
           dest: '.tmp/concat/scripts'
         }]
       }
@@ -351,7 +344,7 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
@@ -397,7 +390,6 @@ module.exports = function (grunt) {
     }
   });
 
-  //grunt.loadNpmTasks('grunt-connect-proxy');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -407,9 +399,8 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
-      //'configureProxies: serve',
       'concurrent:server',
-      'autoprefixer',
+      'autoprefixer:server',
       'connect:livereload',
       'watch'
     ]);
@@ -422,6 +413,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'wiredep',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
