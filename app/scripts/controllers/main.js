@@ -12,77 +12,15 @@
 angular.module('portalApp')
   .controller('MainCtrl', function ($scope, Fetch) {
 
+          $scope.data = {};
 
-      var getResults = Fetch.testQuery(
-                            function(data){
-                              $scope.queries = data;
-                              console.log('getResults fired');
-                              });
-
-
-          
-       
-
-
-
-/*
-  	var entry = Fetch.get({ q: 'q=nurse' }, function(data) {
-  		$scope.entry = data;
-  		
-  	});
-  	console.log(entry);
-*/
-
-/*  	
-  	$scope.results = [];
-
-  	$scope.form = {
-
-  		query: ''
-  	};
-
-  	//loadRemoteData();
-
-  	$scope.getResults = function(){
-
-  		Fetch.getResults($scope.form.widget.query)
-  			.then(
-  				loadRemoteData,
-  				function(errorMessage){
-  					console.warn(errorMessage);
-  				}
-  			);
-  	};
-
-  	function applyRemoteData( newResults ) {
-  		$scope.results = newResults;
-  	}
-
-  	function loadRemoteData (){
-
-  		Fetch.getResults()
-  		  .then(
-  		  	function(results){
-  		  		applyRemoteData( results );
-  		  	}
-  		  );
-  	}
-  	return( console.log($scope.results));
-});
-*/
-
-
-  
-  /*  	
-
-    	var self = this;
-    	$scope.submit = function (){
-    		var thing1 = {q: self.widget.query};
-    		console.log('user clicked submit with ', thing1);
-       };
-       
-
- */     
+          $scope.getResults = function () {
+                Fetch.get({ q: $scope.formQuery }, function(response){
+                     $scope.data.items = response;
+                     console.log('Hi there!');
+                     });
+              };
+    
   });
 
 
