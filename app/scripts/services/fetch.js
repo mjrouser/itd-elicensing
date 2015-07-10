@@ -35,16 +35,19 @@ angular.module('portalApp')
             },  
             //actions
             {
-            get: {
-              method: 'GET',
-              crossDomain: true
+              get: {
+                method: 'GET',
+                isarray: false,
+                crossDomain: true
               }
-            }
-            /* 
-            headers: {
+            },
+            //headers
+            { 
+              headers: {
                 'Accept': 'application/json, application/javascript, text/html',
                 'Content-Type': 'application/json'
-            }*/
+              }
+            }
 
         
 
