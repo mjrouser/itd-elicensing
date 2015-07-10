@@ -9,6 +9,8 @@
 
 module.exports = function (grunt) {
 
+  grunt.loadNpmTasks('grunt-connect-proxy');
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -66,17 +68,58 @@ module.exports = function (grunt) {
 
     // The actual grunt server settings
     connect: {
-      options: {
-        port: 9000,
-        // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
-      },
+      
+        options: {
+          port: 9000,
+          // Change this to '0.0.0.0' to access the server from outside.
+          hostname: 'localhost',
+          livereload: 35729
+        },
+        proxies: [
+             { 
+                context: '146.243.30.38',
+                host: 'localhost',
+                port:8080,
+                https: false,
+                xforward: false,
+                changeOrigin: true,
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'host': '146.243.30.38'
+                },
+                rewrite: {
+                    '^/146.243.30.38': '/localhost/api'
+                }
+             } 
+          ],
+        
+      
+
+
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
-            return [
+          middleware: function (connect, options) {
+              var middlewares = [];
+
+              //Setup the proxy
+              middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
+
+              middlewares.push(connect.static('.tmp'));
+
+              middlewares.push(connect().use(
+                    '/bower_components',
+                    connect.static('./bower_components')
+                    )
+                );
+
+              middlewares.push(connect.static(appConfig.app));
+
+              return middlewares;
+/*
+
+
+              return [
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -86,8 +129,10 @@ module.exports = function (grunt) {
                 '/app/styles',
                 connect.static('./app/styles')
               ),
-              connect.static(appConfig.app)
+              connect.static(appConfig.app),
+              middlewares 
             ];
+*/
           }
         }
       },
@@ -398,6 +443,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'configureProxies: server',
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',

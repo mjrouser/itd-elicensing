@@ -15,10 +15,11 @@ angular.module('portalApp')
           $scope.data = {};
 
           $scope.getResults = function () {
-                Fetch.get({ q: $scope.formQuery }, function(response){
+                Fetch.jsonpQuery({ q: $scope.formQuery }, function(response){
                      $scope.data.items = response;
-                     console.log('Hi there!');
+                     
                      });
+                   console.log('Hi there!');
               };
     
   });

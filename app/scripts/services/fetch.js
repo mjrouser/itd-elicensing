@@ -31,24 +31,31 @@ angular.module('portalApp')
               filter: '0',
               site: 'PORTALxLICENSE',
               startsite: 'PORTALxLICENSE',
-              Search: 'Search'
+              Search: 'Search',
+              callback: 'JSON_CALLBACK'
             },  
             //actions
             {
               get: {
                 method: 'GET',
                 isarray: false,
-                crossDomain: true
+                crossDomain: true,
+                headers: {
+                'Accept': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml',
+                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml'
+                }
+              },
+              jsonpQuery: {
+                method: 'JSONP',
+                //isArray: false,
+                crossDomain: true,
+                headers: {
+                'Accept': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml',
+                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml'
+                }
               }
-            },
-            //headers
-            { 
-              headers: {
-                'Accept': 'application/json, application/javascript, text/html',
-                'Content-Type': 'application/json'
-              }
+            
             }
-
         
 
     );
