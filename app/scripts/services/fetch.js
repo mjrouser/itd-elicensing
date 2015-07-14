@@ -42,16 +42,16 @@ angular.module('portalApp')
                 crossDomain: true,
                 headers: {
                 'Accept': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml',
-                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml'
+                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml, application/xml'
                 }
               },
               jsonpQuery: {
                 method: 'JSONP',
-                //isArray: false,
-                crossDomain: true,
+                isArray: true,
+                //crossDomain: true,
                 headers: {
                 'Accept': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml',
-                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml'
+                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml, application/xml'
                 }
               }
             
