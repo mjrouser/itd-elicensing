@@ -12,15 +12,24 @@
 angular.module('portalApp')
   .controller('MainCtrl', function ($scope, Fetch) {
 
-          $scope.data = [];
+          $scope.data = {};
 
           console.log($scope.data);
 
           $scope.getResults = function () {
-                Fetch.jsonpQuery({ q: $scope.formQuery }, function(response){
-                     $scope.data = response;
+                Fetch.jsonpQuery({ q: $scope.formQuery }, function(){
+                     //$scope.data.results = response;
                      
-                     });
+                     }).$promise.then(
+
+                          function(data){
+                             $scope.data = data;
+                             console.log($scope.data);
+                          },
+                          function(error){
+                            console.log('you done goofed.');
+                          }
+                     );
                    console.log('Hi there!');
 
               };

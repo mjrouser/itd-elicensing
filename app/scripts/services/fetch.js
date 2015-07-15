@@ -14,14 +14,14 @@
 angular.module('portalApp')
   .factory('Fetch', function ($resource) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    return $resource( 'http://146.243.30.38:80/search', 
+    return $resource( 'http://146.243.30.38/search', 
 
             //params
             {
               q:'@q',
               client: 'custom_license',
               proxystylesheet: 'custom_license',
-              output: 'xml_no_dtd',
+              //output: 'xml_no_dtd',
               proxyreload: 0,
               getfields: '*',
               ie: 'UTF-8',
@@ -42,16 +42,19 @@ angular.module('portalApp')
                 crossDomain: true,
                 headers: {
                 'Accept': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml',
-                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml, application/xml'
+                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml, application/xml',
+                'Access-Control-Origin': '*'
                 }
               },
               jsonpQuery: {
                 method: 'JSONP',
-                isArray: true,
-                //crossDomain: true,
+                dataType: 'jsonp',
+                isArray: false,
+                crossDomain: true,
                 headers: {
                 'Accept': 'application/json, application/javascript, text/html, application/xhtml+xml,application/xml',
-                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml, application/xml'
+                'Content-Type': 'application/json, application/javascript, text/html, application/xhtml+xml, application/xml',
+                'Access-Control-Origin': '*'
                 }
               }
             
