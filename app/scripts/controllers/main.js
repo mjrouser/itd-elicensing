@@ -14,6 +14,11 @@ angular.module('portalApp')
 
           $scope.queryResults = {};
 
+          $scope.queryRes =[];
+     
+
+
+
           console.log($scope.queryResults);
 
           $scope.getResults = function () {
@@ -22,9 +27,15 @@ angular.module('portalApp')
                      
                      }).$promise.then(
 
-                          function(queryResults){
-                             $scope.queryResults = queryResults;
-                             console.log($scope.queryResults);
+                          function(data){
+                             //$scope.queryResults = queryResults;
+                             //console.log($scope.queryResults);
+                             $scope.queryRes = [];
+                             for ( var i=0; i < data.GSP.RES.R.length; i++ ){
+                              $scope.queryRes.push(data.GSP.RES.R[i]);
+                             }
+                             console.log($scope.queryRes);
+
                           },
                           function(error){
                             console.log('you done goofed.');

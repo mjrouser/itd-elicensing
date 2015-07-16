@@ -25,14 +25,14 @@
 
 
 
-  <ul>
-    <li ng-repeat="result in queryResults.GSP.RES.R">
-      <p>{{result.T}}</p>
-          <ul>
-            <li></li>
-          </ul>
+  <ol>
+    <li class="result-item" ng-repeat="result in queryRes" >
+      <p class="result-copy" ng-bind-html="result.T"></p>
+      <ul>
+         <li ><a href="{{result.U}}">{{result.MT.description}}</a></li>
+      </ul>
     </li>
-  </ul>
+  </ol>
   
 
   </div>
