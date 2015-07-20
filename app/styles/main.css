@@ -171,6 +171,10 @@ body {
   color: #FFFFFF;
   font-size: 2.3em;
 }
+.submit:hover, .submit:focus{
+  text-decoration: none;
+  color: #FFFFFF;
+}
 .submit-addon{
   background-color: #dda037;
 }
