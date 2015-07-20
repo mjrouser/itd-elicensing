@@ -158,6 +158,34 @@ body {
   margin: 0px;
 }
 
+.q-group{
+  width: 60%;
+  margin: 0 auto;
+}
+
+#q{
+  border-right: 0px none;
+}
+.submit{
+  background-color: #dda037;
+  color: #FFFFFF;
+  font-size: 2.3em;
+}
+.submit-addon{
+  background-color: #dda037;
+}
+
+.result-item {
+  font-size: 30px;
+  color:#dda037;
+}
+ .result-copy{
+  color:#dda037;
+}
+.result-sub-copy{
+  font-size: 14px;
+}
+
 
 /* Main marketing message and sign up button */
 .body-wrapper .jumbotron {
