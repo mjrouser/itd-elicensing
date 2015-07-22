@@ -10,7 +10,7 @@
 
 
 angular.module('portalApp')
-  .controller('MainCtrl', function ($scope, Fetch) {
+  .controller('MainCtrl', function ($scope, $location, Fetch) {
 
           $scope.queryResults = {};
 
@@ -35,6 +35,8 @@ angular.module('portalApp')
                               $scope.queryRes.push(data.GSP.RES.R[i]);
                              }
                              console.log($scope.queryRes);
+
+                           //$location.path('/home').search('q', $scope.formQuery);
 
                           },
                           function(error){

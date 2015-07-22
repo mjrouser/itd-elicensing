@@ -16,26 +16,30 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/home', {
-        url: '/home',
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('/home', {
+        url: '/',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/results', {
+      .state('/results', {
         url:'/results',
         templateUrl: 'views/results.html',
         controller: 'ResultsCtrl'
       })
-      .when('/about', {
+      .state('/about', {
         url:'/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/home'
+      //})
+      //.otherwise({
+        //redirectTo: '/home'
       });
-  });
+  
+});
