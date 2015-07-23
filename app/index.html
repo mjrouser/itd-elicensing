@@ -67,10 +67,16 @@
   <div  class="headline">
     <h2>We've made it way easier to search for licenses and permits to get your business up and running faster and easier than ever before. Get started below by searching for specific licenses or browsing popular ones.</h2>
   </div>
+  <div class="body-wrapper" >
 
-      <div ui-view></div>
+     <div ui-view="search"></div>
+     <div ui-view="popular"></div>
+     <div ui-view="category"></div>
+     
+  </div><!-- /.body-wrapper -->
 
-      <div class="footer">
+
+    <div class="footer">
         <p><span class="glyphicon glyphicon-copyright-mark"></span> 2014 Commonwealth of Massachussetts.<br>
         Mass.Gov <span class="glyphicon glyphicon-registration-mark"></span> is a registered service mark of the Commonwealth of Massachusetts</p>
       </div>
@@ -120,6 +126,9 @@
         <script src="scripts/controllers/about.js"></script>
 
         <script src="scripts/services/fetch.js"></script>
+        <script src="scripts/controllers/popular.js"></script>
+        <script src="scripts/controllers/category.js"></script>
+        <script src="scripts/controllers/search.js"></script>
         <!-- endbuild -->
 </body>
 </html>

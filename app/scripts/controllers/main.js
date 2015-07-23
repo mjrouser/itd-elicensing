@@ -10,8 +10,11 @@
 
 
 angular.module('portalApp')
-  .controller('MainCtrl', function ($scope, $location, Fetch) {
+  .controller('MainCtrl', function ($scope, Fetch) {
 
+
+
+/*
           $scope.queryResults = {};
 
           $scope.queryRes =[];
@@ -46,6 +49,8 @@ angular.module('portalApp')
                    console.log('Hi there!');
 
               };
+
+             */ 
     
   });
 

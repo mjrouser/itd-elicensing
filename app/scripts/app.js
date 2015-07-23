@@ -20,20 +20,38 @@ angular
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
+    
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('/home', {
+      .state('app', {
         url: '/',
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        views: {
+            'search':{
+                 templateUrl: 'partials/search.html',
+                 controller: 'SearchCtrl'
+            },
+            'popular':{
+                 templateUrl: 'partials/popular.html',
+                 controller: 'PopularCtrl'
+            },
+            'category':{
+                 templateUrl: 'partials/category.html',
+                 controller: 'CategoryCtrl'
+            }          
+        }
       })
-      .state('/results', {
-        url:'/results',
-        templateUrl: 'views/results.html',
-        controller: 'ResultsCtrl'
+      .state('app.results', {
+        url:'results',
+        views: {
+            'results@search': {
+                 templateUrl: 'partials/results.html',
+                 controller: 'ResultsCtrl'
+            }
+        }
+        
       })
-      .state('/about', {
+      .state('about', {
         url:'/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
@@ -43,3 +61,4 @@ angular
       });
   
 });
+

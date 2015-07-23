@@ -2,19 +2,19 @@
 
 /**
  * @ngdoc function
- * @name portalApp.controller:AboutCtrl
+ * @name portalApp.controller:ResultsCtrl
  * @description
- * # AboutCtrl
+ * # ResultsCtrl
  * Controller of the portalApp
  */
 angular.module('portalApp')
-  .controller('ResultsCtrl', function ($scope, Fetch) {
+  .controller('ResultsCtrl', function ($scope, $stateParams, Fetch) {
               
-              /*
-              Fetch.jsonpquery(function(data){
-          	$scope.queries = data;
-              console.log('yo mamma!');
 
-               });
-              */
+
+          $scope.queryRes =[];
+     
+
+
+
   });
