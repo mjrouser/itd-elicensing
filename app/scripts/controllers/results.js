@@ -8,13 +8,19 @@
  * Controller of the portalApp
  */
 angular.module('portalApp')
-  .controller('ResultsCtrl', function ($scope, $stateParams, Fetch) {
-              
+  .controller('ResultsCtrl', function ($scope, GSAservice) {
+           
+
+           $scope.queryRes = GSAservice.queryRes;
 
 
-          $scope.queryRes =[];
-     
+           $scope.$watchCollection(
+                 function(){ return GSAservice.queryRes; },
 
+                 function(newVal) {
+                     $scope.queryRes = newVal;
+           },
+           true
+      );
 
-
-  });
+});

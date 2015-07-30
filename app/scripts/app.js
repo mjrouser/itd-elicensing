@@ -44,7 +44,7 @@ angular
       .state('app.results', {
         url:'results',
         views: {
-            'results@search': {
+            'search@': {
                  templateUrl: 'partials/results.html',
                  controller: 'ResultsCtrl'
             }
@@ -52,7 +52,7 @@ angular
         
       })
       .state('about', {
-        url:'/about',
+        url:'about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       //})

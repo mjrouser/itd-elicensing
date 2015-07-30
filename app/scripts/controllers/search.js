@@ -8,10 +8,15 @@
  * Controller of the itdElicensingApp
  */
 angular.module('portalApp')
-  .controller('SearchCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SearchCtrl', function ($scope, GSAservice) {
+  
+
+         $scope.getResults = function(){
+         	console.log('Query submited through SearchCtrl');
+         	new GSAservice.GSAquery( {q: $scope.formQuery} );
+         	
+       };
+ 
   });
+
+ 
