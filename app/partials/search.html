@@ -7,11 +7,11 @@
         <p class="body-text">Use our search tool to find licenses that relate to your specific line of business.</p>
           
 
-          <form class="form" name="output" id="output" role="form" >
-            <div class="form-group"> 
+          <form class="form" name="output" id="output" role="form" ng-submit="getResults(formQuery)" >
+            <div class="form-group" > 
                  <div class="input-group q-group">
                     <input class="form-control input-lg" type="text" name="q" id="q"  ng-model="formQuery" placeholder="Ex. Nursing" />
-                    <div class="input-group-addon submit-addon"><a class="submit" href="" role="submit" ng-click="getResults(formQuery)">Search</a></div>
+                    <div class="input-group-addon submit-addon"><input type="submit" class="submit btn" role="submit" value="Search"></div>
                  </div> 
             </div>
           </form >
@@ -19,21 +19,21 @@
 
     </div>
   </div>
+</div>
+ 
 
-  <div ui-view="results"></div>
 
-
-<!--
-  <div class="row marketing"  ng-controller="ResultsCtrl">
-  <div class="customHTML">
+  <div class="row marketing"  ng-controller="ResultsCtrl" ng-show="queryRes.length">
+     <div class="customHTML">
+       <h3>Your Results: </h3>
          <ol>
            <li class="result-item" ng-repeat="result in queryRes" >
              <h2 class="result-copy" ng-bind-html="result.T"></h2>
              <p class="result-sub-copy"><a href="{{result.U}}">{{result.MT.description}}</a></p>
            </li>
          </ol>  
-    <p>{{formQuery}}</p>
-  </div>
+
+      </div>
    </div> 
-</div>
--->
+
+

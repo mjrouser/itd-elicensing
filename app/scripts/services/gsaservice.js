@@ -12,7 +12,7 @@ angular.module('portalApp')
 
           
            var self = this;
-           this.queryRes =[];
+           this.queryRes ={};
           
 
            this.GSAquery = function  ( {q} ) {
@@ -21,12 +21,15 @@ angular.module('portalApp')
                      }).$promise.then(
 
                           function(data){
-                                 self.queryRes= [] ;
+                                self.queryRes= data;
+
+                            /*
+                                 self.queryRes= [];
                                  data.GSP.RES.R.forEach(function(res){
                                         	self.queryRes.push(res);
                              	
-                             });
-                             console.log('Data returned and pushed to an array');
+                             });*/
+                             console.log('Data returned from Fetch');
                              console.log(self.queryRes); 
                             
                           },

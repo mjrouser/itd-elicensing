@@ -5,14 +5,14 @@
 
   <div class="row marketing" ng-controller="ResultsCtrl" >
 	<div class="customHTML">
- 
+       <p>Results for {{formQuery}} </p>
          <ol>
            <li class="result-item" ng-repeat="result in queryRes" >
              <h2 class="result-copy" ng-bind-html="result.T"></h2>
              <p class="result-sub-copy"><a href="{{result.U}}">{{result.MT.description}}</a></p>
            </li>
          </ol>	
-		<p>{{formQuery}}</p>
+		
 	</div>
    </div> 
 

@@ -10,6 +10,7 @@
 angular.module('portalApp')
   .controller('SearchCtrl', function ($scope, GSAservice) {
   
+         $scope.queryRes = GSAservice.queryRes;
 
          $scope.getResults = function(){
          	console.log('Query submited through SearchCtrl');

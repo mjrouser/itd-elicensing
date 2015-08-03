@@ -25,7 +25,7 @@ angular
 
     $stateProvider
       .state('app', {
-        url: '/',
+        url: '/', 
         views: {
             'search':{
                  templateUrl: 'partials/search.html',
@@ -39,16 +39,27 @@ angular
                  templateUrl: 'partials/category.html',
                  controller: 'CategoryCtrl'
             }          
-        }
+        } 
       })
-      .state('app.results', {
-        url:'results',
+      .state('results', {
+        
+        url:'/results',
+        
         views: {
-            'search@': {
-                 templateUrl: 'partials/results.html',
-                 controller: 'ResultsCtrl'
+            'search': {
+                 templateUrl: 'partials/search.html',
+                 controller: 'SearchCtrl'
+            },
+            'popular':{
+                 templateUrl: 'partials/popular.html',
+                 controller: 'PopularCtrl'
+            },
+            'category':{
+                 templateUrl: 'partials/category.html',
+                 controller: 'CategoryCtrl'
             }
         }
+        
         
       })
       .state('about', {
