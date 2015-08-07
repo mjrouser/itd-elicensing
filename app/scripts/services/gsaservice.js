@@ -12,36 +12,23 @@ angular.module('portalApp')
 
           
            var self = this;
-           this.queryRes ={};
+           this.queryRes = {};
           
 
-           this.GSAquery = function  ( {q} ) {
-                Fetch.jsonpQuery({ q }, function(){
+           this.GSAquery = function  ( q ) {
+                Fetch.jsonpQuery( q , function(){
                      
                      }).$promise.then(
 
                           function(data){
                                 self.queryRes= data;
-
-                            /*
-                                 self.queryRes= [];
-                                 data.GSP.RES.R.forEach(function(res){
-                                        	self.queryRes.push(res);
-                             	
-                             });*/
-                             console.log('Data returned from Fetch');
-                             console.log(self.queryRes); 
-                            
-                          },
-
-                          function(error){
-                            console.log('you done goofed.');
+                                console.log('Data returned from Fetch');
+                                console.log(self.queryRes);                          
                           }
                      );
 
                  console.log('GSAservice queried the AJAX resource');
 
              };
-
-          
+       
   });

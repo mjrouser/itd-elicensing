@@ -21,55 +21,28 @@ angular
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/');
+    
 
     $stateProvider
-      .state('app', {
-        url: '/', 
-        views: {
-            'search':{
-                 templateUrl: 'partials/search.html',
-                 controller: 'SearchCtrl'
-            },
-            'popular':{
-                 templateUrl: 'partials/popular.html',
-                 controller: 'PopularCtrl'
-            },
-            'category':{
-                 templateUrl: 'partials/category.html',
-                 controller: 'CategoryCtrl'
-            }          
-        } 
-      })
-      .state('results', {
-        
-        url:'/results',
-        
-        views: {
-            'search': {
-                 templateUrl: 'partials/search.html',
-                 controller: 'SearchCtrl'
-            },
-            'popular':{
-                 templateUrl: 'partials/popular.html',
-                 controller: 'PopularCtrl'
-            },
-            'category':{
-                 templateUrl: 'partials/category.html',
-                 controller: 'CategoryCtrl'
-            }
-        }
-        
+      .state('index', {
+        url: '/',
+        templateUrl: 'partials/search.html',
+        controller: 'SearchCtrl'
         
       })
-      .state('about', {
-        url:'about',
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      //})
-      //.otherwise({
-        //redirectTo: '/home'
+      .state('index.home',{
+        url:'home',
+        templateUrl: 'partials/search.html',
+        controller: 'SearchCtrl'
+
+      })
+      .state('index.resState', {
+        url:'results',
+        templateUrl: 'partials/results.html',
+        controller: 'ResultsCtrl'
+
       });
+    $urlRouterProvider.otherwise('/');
   
 });
 
