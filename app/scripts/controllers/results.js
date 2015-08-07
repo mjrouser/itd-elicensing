@@ -9,9 +9,9 @@
  */
 angular.module('portalApp')
   .controller('ResultsCtrl', function ($scope, $state, GSAservice ) {
-           
-           $scope.queryRes = [];
-
+          /*
+           $scope.queryRes = GSAservice.queryRes;
+             */
            $scope.$watchCollection(
                  function(){ 
                  	return GSAservice.queryRes;                 	
@@ -25,4 +25,5 @@ angular.module('portalApp')
                      console.log('Search values pushed to array for results view');
                    }
              );
+
 });

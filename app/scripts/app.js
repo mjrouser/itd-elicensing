@@ -28,14 +28,9 @@ angular
         url: '/',
         templateUrl: 'partials/search.html',
         controller: 'SearchCtrl'
-        
-      })
-      .state('index.home',{
-        url:'home',
-        templateUrl: 'partials/search.html',
-        controller: 'SearchCtrl'
 
       })
+      
       .state('index.resState', {
         url:'results',
         templateUrl: 'partials/results.html',
