@@ -349,7 +349,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html', 'views/{,*/}*.html', 'partials/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -408,6 +408,27 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      }
+    },
+
+   buildcontrol: {
+      options: {
+         dir: 'dist',
+         commit: true,
+         push: true,
+         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        },
+      pages: {
+        options: {
+          remote: 'git@github.com:massgov/itd-elicensing.git',
+          branch: 'gh-pages'
+        }
+      },
+      local: {
+        options: {
+          remote: '../',
+          branch: 'production'
+        }
       }
     },
 
