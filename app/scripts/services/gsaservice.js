@@ -24,7 +24,7 @@ angular.module('portalApp')
                                 self.queryRes= data;
                                 console.log('Data returned from Fetch');
                                 console.log(self.queryRes);                          
-                          }
+                          } 
                      );
 
                  console.log('GSAservice queried the AJAX resource');
