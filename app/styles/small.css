@@ -90,7 +90,7 @@ body {
 
 }
 
-.head-text p{
+.head-text h1{
   font-size: 1.7em;
 }
 
@@ -122,7 +122,7 @@ body {
   border-radius: 10px;
 }
 
-.get-started .element p {
+.get-started .element h1 {
   color: #FFFFFF;
   text-align: center;
   font-size: 1.7em;

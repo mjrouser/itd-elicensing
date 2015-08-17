@@ -16,23 +16,39 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+  .config(function ($stateProvider, $urlRouterProvider) {
+    
+    
+
+    $stateProvider
+      .state('index', {
+        url: '/',
+        templateUrl: 'partials/search.html',
+        controller: 'SearchCtrl'/*,
+        resolve: {
+          queryParam: function($stateParams){
+             return $stateParams.queryParam;
+          }
+        }*/
+
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/results', {
-        templateUrl: 'views/results.html',
-        controller: 'ResultsCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+      
+      .state('index.resState', {
+        url:'results/:queryParam',
+        templateUrl: 'partials/results.html',
+        controller: 'ResultsCtrl',
+        params: {
+          queryParam:  function ($stateParams){
+            return $stateParams.queryParam;
+          } 
+          
+        }
+
       });
-  });
+    $urlRouterProvider.otherwise('/');
+  
+});
+

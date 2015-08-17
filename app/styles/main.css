@@ -65,7 +65,7 @@ body {
 /* styling for the masthead images and text*/
 .image-group {
 
-  height: 500px;
+  height: 400px;
 
 }
 
@@ -83,14 +83,14 @@ body {
    z-index: 1;
    width: 180px;
    height: 180px;
-   padding-top: 8%;
+   padding-top: 3%;
    position: relative;
 
 }
 
 .head-text {
   
-  padding-top: 10%;
+  padding-top: 4%;
   text-align: center;
   width: 100%;
   color: #FFFFFF;
@@ -99,7 +99,7 @@ body {
   z-index: 1;
 }
 
-.head-text p{
+.head-text h1{
   font-size: 36px;
 }
 /*Styling for the "Get Started Now" element */
@@ -127,11 +127,11 @@ body {
   border-radius: 10px;
 }
 
-.get-started .element p {
+.get-started .element h1 {
   color: #FFFFFF;
   text-align: center;
   font-size: 2.6em;
-  margin-top: -0.1em;
+  margin-top: 0.1em;
 }
 /* Styleing for page headline */
 .headline {
@@ -156,6 +156,47 @@ body {
 .body-wrapper {
   position: relative;
   margin: 0px;
+}
+
+.q-group{
+  width: 60%;
+  margin: 0 auto;
+}
+
+#q{
+  border-right: 0px none;
+}
+
+.submit{
+  background-color: #dda037;
+  color: #FFFFFF;
+  font-size: 2.3em;
+  padding: 6px 12px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: none;
+}
+
+.submit:hover, .submit:focus{
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #B3904F;
+}
+.submit-addon{
+  background-color: #dda037;
+  padding: 0px;
+}
+
+
+.result-item {
+  font-size: 30px;
+  color:#dda037;
+}
+ .result-copy{
+  color:#dda037;
+}
+.result-sub-copy{
+  font-size: 14px;
 }
 
 
@@ -207,6 +248,15 @@ body {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   text-align: center;
+}
+.press-link:hover, .press-link:focus,
+.show-me:hover, .press-me:hover, 
+.show-me:focus, .press-me:focus{
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #B3904F;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 

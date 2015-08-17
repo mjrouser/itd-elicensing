@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: PopularCtrl', function () {
 
   // load the controller's module
   beforeEach(module('itdElicensingApp'));
 
-  var AboutCtrl,
+  var PopularCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    PopularCtrl = $controller('PopularCtrl', {
       $scope: scope
     });
   }));

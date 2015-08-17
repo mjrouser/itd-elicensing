@@ -1,0 +1,28 @@
+
+  
+  <div class="row marketing"  ng-controller="SearchCtrl" >  
+    <div class="customHTML">
+    
+    <div >
+      <h2 class="caption">Search for a specific license</h2>
+        <p class="body-text">Use our search tool to find licenses that relate to your specific line of business.</p>
+          
+
+          <form class="form" name="output" id="output" role="form" ng-submit="getResults(formQuery)" >
+            <div class="form-group" > 
+                 <div class="input-group q-group">
+                    <input class="form-control input-lg" type="text" name="q" id="q"  ng-model="formQuery" placeholder="Ex. Nursing" />
+                    <div class="input-group-addon submit-addon"><input type="submit" class="submit" role="submit" value="Search"></div>
+                 </div> 
+            </div>
+          </form >
+
+
+    </div>
+  </div>
+
+</div>
+ 
+
+
+<div ui-view ></div>
