@@ -27,14 +27,25 @@ angular
       .state('index', {
         url: '/',
         templateUrl: 'partials/search.html',
-        controller: 'SearchCtrl'
+        controller: 'SearchCtrl'/*,
+        resolve: {
+          queryParam: function($stateParams){
+             return $stateParams.queryParam;
+          }
+        }*/
 
       })
       
       .state('index.resState', {
-        url:'results',
+        url:'results/:queryParam',
         templateUrl: 'partials/results.html',
-        controller: 'ResultsCtrl'
+        controller: 'ResultsCtrl',
+        params: {
+          queryParam:  function ($stateParams){
+            return $stateParams.queryParam;
+          } 
+          
+        }
 
       });
     $urlRouterProvider.otherwise('/');

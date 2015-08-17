@@ -8,10 +8,9 @@
  * Controller of the portalApp
  */
 angular.module('portalApp')
-  .controller('ResultsCtrl', function ($scope, $state, GSAservice ) {
-          /*
-           $scope.queryRes = GSAservice.queryRes;
-             */
+  .controller('ResultsCtrl', function ($scope, $state, GSAservice, $stateParams ) {
+          
+   
            $scope.$watchCollection(
                  function(){ 
                  	return GSAservice.queryRes;                 	
