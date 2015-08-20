@@ -4,6 +4,10 @@ This is the repository for the future front page of the Commonwealth elicensing 
 This project is scaffolded with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
 
+Build with HTML, CSS and Javascript.  
+
+Frameworks used: are [Bootstrap](http://getbootstrap.com/) and [AngularJS](https://angularjs.org/)
+
 ##Setup
 Clone repository to local, cd into the root directory and run the following commands at the command prompt:
 
