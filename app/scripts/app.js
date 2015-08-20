@@ -26,7 +26,7 @@ angular
     $stateProvider
       .state('index', {
         url: '/',
-        templateUrl: 'partials/search.html',
+        templateUrl: 'views/search.html',
         controller: 'SearchCtrl'/*,
         resolve: {
           queryParam: function($stateParams){
@@ -38,7 +38,7 @@ angular
       
       .state('index.resState', {
         url:'results/:queryParam',
-        templateUrl: 'partials/results.html',
+        templateUrl: 'views/results.html',
         controller: 'ResultsCtrl',
         params: {
           queryParam:  function ($stateParams){

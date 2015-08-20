@@ -42,20 +42,14 @@ body {
 
 
 /* Custom page footer */
-.footer {
-  
+.footer { 
   background-color: #404040;
   padding-top: 1.3em;
-
-  
 }
 .footer p {
-
   margin-left: 100px;
   margin-bottom: 0;
   color: #f2f2f2;
-
-
 }
 
 
