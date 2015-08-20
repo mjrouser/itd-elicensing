@@ -7,9 +7,7 @@ version 0.11.1.
 ##Setup
 Clone repository to local, cd into the root directory and run the following commands at the command prompt:
 
-'npm install'  
-&
-'bower install'
+`npm install`  &  `bower install`
 
 This will import all build dependencies.
 
