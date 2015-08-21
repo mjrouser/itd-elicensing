@@ -14,6 +14,6 @@ See accompanying PDF in `docs` folder for diagrams with IP address of dev and te
 
 For access to the code base, contact [Rob Powell](Rob.Powell@MassMail.State.MA.US) and request access to the Github repository
 
-For access to the Google search appliance, contact [Joe Galluccio](Joseph.Galluccio@MassMail.State.MA.US).  Be prepared to supply your static IP address.
+For access to the Google search appliance, contact [Joe Galluccio](mailto: Joseph.Galluccio@MassMail.State.MA.US).  Be prepared to supply your static IP address.
 
-For access to the Dev and Testing Environments, contact [Elliot Gerberg](Elliot.Gerberg@MassMail.State.MA.US). Static IP is required.  
+For access to the Dev and Testing Environments, contact [Elliot Gerberg](mailto: Elliot.Gerberg@MassMail.State.MA.US). Static IP is required.  
